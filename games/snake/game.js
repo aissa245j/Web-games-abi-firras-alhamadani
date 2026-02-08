@@ -121,6 +121,7 @@ const canvas = document.getElementById("board");
     function setDirection(x, y) {
       if (direction.x === -x && direction.y === -y) return;
       nextDirection = { x, y };
+      if (!loopId) startGame();
     }
 
     document.addEventListener("keydown", (event) => {

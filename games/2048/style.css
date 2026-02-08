@@ -40,24 +40,33 @@
     button { border: 1px solid var(--border); background: #ffffff; padding: 8px 12px; border-radius: 4px; font-weight: 600; cursor: pointer; }
     .stats { display: grid; gap: 8px; font-size: 14px; color: var(--muted); }
     .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 80px);
-      gap: 10px;
+      --cell: 80px;
+      --gap: 10px;
+      position: relative;
+      width: calc(var(--cell) * 4 + var(--gap) * 3);
+      height: calc(var(--cell) * 4 + var(--gap) * 3);
       background: #e8edf5;
-      padding: 10px;
       border-radius: 8px;
       border: 1px solid var(--border);
     }
     .tile {
-      width: 80px;
-      height: 80px;
-      background: #f0f3f9;
+      position: absolute;
+      width: var(--cell);
+      height: var(--cell);
       border-radius: 6px;
       display: grid;
       place-items: center;
       font-size: 24px;
       font-weight: 700;
       color: #1d2433;
+      transition: transform 120ms ease, background 120ms ease;
+    }
+    .tile.new {
+      animation: pop 120ms ease;
+    }
+    @keyframes pop {
+      from { transform: scale(0.8); }
+      to { transform: scale(1); }
     }
 
     .touch-controls {
@@ -73,7 +82,6 @@
     }
     @media (max-width: 720px) {
       .game-area { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: repeat(4, 1fr); }
-      .tile { width: 100%; height: 60px; }
+      .grid { --cell: 60px; --gap: 8px; }
       .touch-controls { display: grid; }
     }

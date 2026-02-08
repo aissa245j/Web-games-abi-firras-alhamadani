@@ -203,6 +203,7 @@ const canvas = document.getElementById("board");
 
     document.addEventListener("keydown", (event) => {
       const key = event.key.toLowerCase();
+      if (!running) startGame();
       if (key === "arrowup" || key === "w") { player.nextDx = 0; player.nextDy = -1; }
       if (key === "arrowdown" || key === "s") { player.nextDx = 0; player.nextDy = 1; }
       if (key === "arrowleft" || key === "a") { player.nextDx = -1; player.nextDy = 0; }
@@ -211,6 +212,7 @@ const canvas = document.getElementById("board");
 
     document.querySelectorAll(".touch-controls button").forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (!running) startGame();
         const dir = btn.dataset.dir;
         if (dir === "up") { player.nextDx = 0; player.nextDy = -1; }
         if (dir === "down") { player.nextDx = 0; player.nextDy = 1; }
