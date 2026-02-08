@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breakout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>Breakout</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>How to Play</h2>
+      <p>Move the paddle with the mouse or arrow keys. Break all the bricks to win. Catch falling items for abilities.</p>
+    </section>
+
+    <section class="panel game-area">
+      <canvas id="board" width="520" height="360" aria-label="Breakout board"></canvas>
+      <div class="stats">
+        <div><strong>Score:</strong> <span id="score">0</span></div>
+        <div><strong>Lives:</strong> <span id="lives">3</span></div>
+        <div><strong>Status:</strong> <span id="status">Ready</span></div>
+        <button id="startBtn">Start / Restart</button>
+        <div class="legend">
+          Items: W=Wide, N=Narrow, S=Slow, F=Fast, L=Life, P=Pierce
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

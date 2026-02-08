@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skyforge Fleet</title>
+  <style>
+    :root {
+      --bg: #f8f9fc;
+      --panel: #ffffff;
+      --text: #1d2433;
+      --muted: #5b6677;
+      --border: #d9dfec;
+      --accent: #0f6ba8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px;
+      align-items: center;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #0f6ba8, #f4b41a);
+      color: #ffffff;
+    }
+
+    .topbar a {
+      display: inline-block;
+      background: #ffffff;
+      color: #0f6ba8;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #e0e6f5;
+      text-align: center;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .fleet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .ship {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px;
+      background: #f2f5fb;
+      text-align: center;
+      font-size: 12px;
+      color: #4a5568;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>Skyforge Fleet</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Overview</h2>
+      <p>Build a fleet of modular airships, manage supply lines, and engage in mission-driven battles across changing weather fronts.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Fleet Assembly</h2>
+      <p>Each ship uses a hull plus up to 3 modules. Modules can be swapped between missions, but you pay upkeep for every active ship.</p>
+      <div class="fleet">
+        <div class="ship">Scout Hull + Sensor Array</div>
+        <div class="ship">Destroyer Hull + Cannon Deck</div>
+        <div class="ship">Carrier Hull + Drone Bay</div>
+        <div class="ship">Support Hull + Repair Rig</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Mission Flow</h2>
+      <ul class="list">
+        <li>Draw 2 objectives and 1 weather front. Weather modifies range and visibility.</li>
+        <li>Allocate command points to move, attack, defend, or deploy drones.</li>
+        <li>Resolve combat by comparing attack strength to defense plus terrain bonuses.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Win Condition</h2>
+      <p>Complete 3 objectives before your fleet morale drops to 0. For a campaign mode, carry over damaged modules between missions.</p>
+    </section>
+  </main>
+</body>
+</html>

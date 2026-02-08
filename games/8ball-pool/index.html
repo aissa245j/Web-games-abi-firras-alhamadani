@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>8-Ball Pool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>8-Ball Pool</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>How to Play</h2>
+      <p>Drag to aim and set power, release to shoot. Pocket balls to score. Use the aim line for precision.</p>
+    </section>
+
+    <section class="panel game-area">
+      <canvas id="table" width="720" height="360" aria-label="8-ball pool table"></canvas>
+      <div class="stats">
+        <div><strong>Score:</strong> <span id="score">0</span></div>
+        <div><strong>Shots:</strong> <span id="shots">0</span></div>
+        <div><strong>Status:</strong> <span id="status">Ready</span></div>
+        <button id="resetBtn">Reset Rack</button>
+        <div class="legend">
+          Tip: Click and drag from the cue ball to aim and set power.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

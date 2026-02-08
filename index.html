@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Games Hub</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #1c2333;
+      --muted: #5b677a;
+      --border: #d8dee9;
+      --link: #1b4dd8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    header {
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .search {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .search input {
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 16px;
+    }
+
+    .search button {
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 170px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .card a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Simple Games Hub</h1>
+      <p>Play classic games built with simple HTML, CSS, and JavaScript.</p>
+      <div class="search">
+        <input id="search" placeholder="Search games..." />
+        <button id="clear">Clear</button>
+      </div>
+    </header>
+
+    <section class="grid" id="grid">
+      <article class="card" data-title="snake" data-desc="grow your snake, avoid walls, and chase high scores.">
+        <h2>Snake</h2>
+        <p>Grow your snake, avoid walls, and chase high scores.</p>
+        <a href="./games/snake/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="tic-tac-toe" data-desc="play against a smart ai or a second player.">
+        <h2>Tic-Tac-Toe</h2>
+        <p>Play against a smart AI or a second player.</p>
+        <a href="./games/tictactoe/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="breakout" data-desc="break all the bricks and collect power-up items.">
+        <h2>Breakout</h2>
+        <p>Break all the bricks and collect power-up items.</p>
+        <a href="./games/breakout/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="pac-man" data-desc="collect pellets, dodge ghosts, and clear the maze.">
+        <h2>Pac-Man</h2>
+        <p>Collect pellets, dodge ghosts, and clear the maze.</p>
+        <a href="./games/pacman/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="8-ball pool" data-desc="rack up balls, aim carefully, and sink shots.">
+        <h2>8-Ball Pool</h2>
+        <p>Rack up balls, aim carefully, and sink shots.</p>
+        <a href="./games/8ball-pool/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="memory match" data-desc="flip cards and match all pairs with the fewest moves.">
+        <h2>Memory Match</h2>
+        <p>Flip cards and match all pairs with the fewest moves.</p>
+        <a href="./games/memory-match/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="minesweeper" data-desc="reveal the grid, flag mines, and clear all safe tiles.">
+        <h2>Minesweeper</h2>
+        <p>Reveal the grid, flag mines, and clear all safe tiles.</p>
+        <a href="./games/minesweeper/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="2048" data-desc="slide and merge tiles to reach higher numbers.">
+        <h2>2048</h2>
+        <p>Slide and merge tiles to reach higher numbers.</p>
+        <a href="./games/2048/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="simon says" data-desc="repeat the sequence as it grows each round.">
+        <h2>Simon Says</h2>
+        <p>Repeat the sequence as it grows each round.</p>
+        <a href="./games/simon/index.html">Open game</a>
+      </article>
+      <article class="card" data-title="pong" data-desc="classic paddle match against a simple ai.">
+        <h2>Pong</h2>
+        <p>Classic paddle match against a simple AI.</p>
+        <a href="./games/pong/index.html">Open game</a>
+      </article>
+    </section>
+
+    <footer>Add more games by creating a new folder in <code>games/</code>.</footer>
+  </div>
+
+  <script>
+    const search = document.getElementById("search");
+    const clear = document.getElementById("clear");
+    const cards = Array.from(document.querySelectorAll(".card"));
+
+    function applyFilter() {
+      const query = search.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const hay = card.dataset.title + " " + card.dataset.desc;
+        card.style.display = hay.includes(query) ? "flex" : "none";
+      });
+    }
+
+    search.addEventListener("input", applyFilter);
+    clear.addEventListener("click", () => { search.value = ""; applyFilter(); });
+  </script>
+</body>
+</html>

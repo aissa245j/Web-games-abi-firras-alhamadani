@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pong</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>Pong</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>How to Play</h2>
+      <p>Move your paddle with W/S or Up/Down. First to 7 wins.</p>
+    </section>
+
+    <section class="panel game-area">
+      <canvas id="board" width="520" height="320" aria-label="Pong board"></canvas>
+      <div class="stats">
+        <div><strong>Player:</strong> <span id="p1">0</span></div>
+        <div><strong>AI:</strong> <span id="p2">0</span></div>
+        <div><strong>Status:</strong> <span id="status">Ready</span></div>
+        <button id="startBtn">Start / Restart</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signal Heist</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1a2230;
+      --muted: #5b6677;
+      --border: #d7deea;
+      --accent: #2c4aa5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px;
+      align-items: center;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #2c4aa5, #e76f51);
+      color: #ffffff;
+    }
+
+    .topbar a {
+      display: inline-block;
+      background: #ffffff;
+      color: #2c4aa5;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #e0e6f5;
+      text-align: center;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .cell {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px;
+      background: #f1f4f9;
+      text-align: center;
+      font-size: 12px;
+      color: #4a5568;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>Signal Heist</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Overview</h2>
+      <p>Infiltrate a secure facility by sequencing actions across a timeline. You must collect 3 data shards and exit before the alarm meter fills.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Facility Layout</h2>
+      <p>Build a 3x3 grid of rooms. Each room has a security level and a reward. Patrol routes advance one room per round.</p>
+      <div class="layout">
+        <div class="cell">Security Hub</div>
+        <div class="cell">Server Vault</div>
+        <div class="cell">Maintenance</div>
+        <div class="cell">Lobby</div>
+        <div class="cell">Archive</div>
+        <div class="cell">Armory</div>
+        <div class="cell">Roof Access</div>
+        <div class="cell">Cooling</div>
+        <div class="cell">Exit</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Planning Phase</h2>
+      <ul class="list">
+        <li>Assign 4 action tokens to the next 2 rounds (move, hack, distract, hide).</li>
+        <li>Each hack rolls against the room security level. Failures raise the alarm meter.</li>
+        <li>Distractions move patrols; hiding reduces alarm by 1.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Win Condition</h2>
+      <p>Collect 3 data shards and reach the Exit before the alarm meter hits 8. For a higher challenge, add a second patrol route.</p>
+    </section>
+  </main>
+</body>
+</html>

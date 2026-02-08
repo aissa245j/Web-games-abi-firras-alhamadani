@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pac-Man</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>Pac-Man</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>How to Play</h2>
+      <p>Use arrow keys or WASD to move. Eat all pellets to advance. Avoid ghosts unless a power pellet is active.</p>
+    </section>
+
+    <section class="panel game-area">
+      <canvas id="board" width="420" height="420" aria-label="Pac-Man board"></canvas>
+      <div class="stats">
+        <div><strong>Score:</strong> <span id="score">0</span></div>
+        <div><strong>Lives:</strong> <span id="lives">3</span></div>
+        <div><strong>Status:</strong> <span id="status">Ready</span></div>
+        <button id="startBtn">Start / Restart</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

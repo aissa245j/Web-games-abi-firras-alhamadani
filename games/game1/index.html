@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frontier Supply Run</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --text: #1d2433;
+      --muted: #556173;
+      --border: #d9e1ee;
+      --accent: #0b5cd6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 120px 1fr 120px;
+      align-items: center;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #0b5cd6, #12a36a);
+      color: #ffffff;
+    }
+
+    .topbar a {
+      display: inline-block;
+      background: #ffffff;
+      color: #0b5cd6;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #e0e6f5;
+      text-align: center;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    p { margin: 0 0 10px; color: var(--muted); line-height: 1.5; }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tile {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 10px;
+      background: #f0f3f9;
+      text-align: center;
+      font-size: 12px;
+      color: #4a5568;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../index.html">Home</a>
+    <h1>Frontier Supply Run</h1>
+    <div></div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h2>Overview</h2>
+      <p>Run a convoy across hostile territory, trading with settlements and managing fuel, morale, and cargo space. Every round introduces a new hazard, and the market prices shift in response to what you sell.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Setup</h2>
+      <ul class="list">
+        <li>Draw 12 route tiles (4 settlements, 4 hazards, 4 open routes). Shuffle and lay them in a 3x4 grid.</li>
+        <li>Start with 8 fuel, 4 morale, and 6 cargo slots.</li>
+        <li>Each settlement has 3 goods and 2 needs. Use tokens or a quick note.</li>
+      </ul>
+      <div class="map">
+        <div class="tile">Settlement A</div>
+        <div class="tile">Hazard</div>
+        <div class="tile">Open Route</div>
+        <div class="tile">Settlement B</div>
+        <div class="tile">Open Route</div>
+        <div class="tile">Hazard</div>
+        <div class="tile">Open Route</div>
+        <div class="tile">Settlement C</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Turn Structure</h2>
+      <ul class="list">
+        <li>Plan: Spend 1 morale to reroute a single tile or scan 2 adjacent tiles.</li>
+        <li>Move: Spend 1 fuel to move to an adjacent tile. Hazards require a skill test.</li>
+        <li>Trade: At settlements, buy or sell goods. Prices shift if the market is flooded.</li>
+        <li>Resolve: Draw a weather or raider card that affects the next turn.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Win Condition</h2>
+      <p>Reach the final settlement with at least 12 total value in cargo and 2 morale. For a hard mode, require 3 settlements visited and no route backtracking.</p>
+    </section>
+  </main>
+</body>
+</html>
