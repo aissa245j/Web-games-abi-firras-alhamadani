@@ -10,6 +10,7 @@ A lightweight multi-game website built with plain HTML, CSS, and JavaScript. Eac
 ## Run
 
 Open `index.html` in a browser to play.
+Or try it live: `https://aissa245j.github.io/Web-games-abi-firras-alhamadani/index.html`
 
 ## Add a Game
 
