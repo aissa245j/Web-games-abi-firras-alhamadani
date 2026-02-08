@@ -246,6 +246,19 @@ const canvas = document.getElementById("board");
       if (event.key === "ArrowLeft" || event.key === "ArrowRight") paddle.dx = 0;
     });
 
+    document.querySelectorAll(".touch-controls button").forEach((btn) => {
+      const dir = btn.dataset.move;
+      const setMove = (value) => { paddle.dx = value; };
+      btn.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        setMove(dir === "left" ? -paddle.speed : paddle.speed);
+      }, { passive: false });
+      btn.addEventListener("touchend", () => setMove(0));
+      btn.addEventListener("mousedown", () => setMove(dir === "left" ? -paddle.speed : paddle.speed));
+      btn.addEventListener("mouseup", () => setMove(0));
+      btn.addEventListener("mouseleave", () => setMove(0));
+    });
+
     canvas.addEventListener("mousemove", (event) => {
       const rect = canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;

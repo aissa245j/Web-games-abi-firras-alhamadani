@@ -209,6 +209,19 @@ const canvas = document.getElementById("board");
       if (key === "arrowright" || key === "d") { player.nextDx = 1; player.nextDy = 0; }
     });
 
+    document.querySelectorAll(".touch-controls button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const dir = btn.dataset.dir;
+        if (dir === "up") { player.nextDx = 0; player.nextDy = -1; }
+        if (dir === "down") { player.nextDx = 0; player.nextDy = 1; }
+        if (dir === "left") { player.nextDx = -1; player.nextDy = 0; }
+        if (dir === "right") { player.nextDx = 1; player.nextDy = 0; }
+      });
+      btn.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+      }, { passive: false });
+    });
+
     startBtn.addEventListener("click", startGame);
 
     drawMap();

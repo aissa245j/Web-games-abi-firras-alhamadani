@@ -134,5 +134,12 @@ const gridEl = document.getElementById("grid");
       if (key === "arrowdown" || key === "s") handleMove("down");
     });
 
+    document.querySelectorAll(".touch-controls button").forEach((btn) => {
+      btn.addEventListener("click", () => handleMove(btn.dataset.move));
+      btn.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+      }, { passive: false });
+    });
+
     restartBtn.addEventListener("click", setup);
     setup();

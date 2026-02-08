@@ -90,5 +90,18 @@ const canvas = document.getElementById("board");
       if (["ArrowUp","ArrowDown","w","s","W","S"].includes(event.key)) p1.dy = 0;
     });
 
+    document.querySelectorAll(".touch-controls button").forEach((btn) => {
+      const dir = btn.dataset.move;
+      const setMove = (value) => { p1.dy = value; };
+      btn.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        setMove(dir === "up" ? -4 : 4);
+      }, { passive: false });
+      btn.addEventListener("touchend", () => setMove(0));
+      btn.addEventListener("mousedown", () => setMove(dir === "up" ? -4 : 4));
+      btn.addEventListener("mouseup", () => setMove(0));
+      btn.addEventListener("mouseleave", () => setMove(0));
+    });
+
     startBtn.addEventListener("click", startGame);
     draw();

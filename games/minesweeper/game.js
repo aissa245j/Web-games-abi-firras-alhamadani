@@ -6,10 +6,12 @@ const size = 10;
     const flagsEl = document.getElementById("flags");
     const statusEl = document.getElementById("status");
     const restartBtn = document.getElementById("restart");
+    const flagToggleBtn = document.getElementById("flagToggle");
 
     let cells = [];
     let flags = 0;
     let gameOver = false;
+    let flagMode = false;
 
     function setup() {
       cells = [];
@@ -79,17 +81,26 @@ const size = 10;
 
     function handleClick(cell) {
       if (gameOver) return;
-      reveal(cell);
+      if (flagMode) {
+        toggleFlag(cell);
+      } else {
+        reveal(cell);
+      }
       checkWin();
       render();
+    }
+
+    function toggleFlag(cell) {
+      if (cell.revealed) return;
+      cell.flag = !cell.flag;
+      flags += cell.flag ? 1 : -1;
+      flagsEl.textContent = flags;
     }
 
     function handleRightClick(event, cell) {
       event.preventDefault();
       if (gameOver || cell.revealed) return;
-      cell.flag = !cell.flag;
-      flags += cell.flag ? 1 : -1;
-      flagsEl.textContent = flags;
+      toggleFlag(cell);
       render();
     }
 
@@ -110,4 +121,8 @@ const size = 10;
     }
 
     restartBtn.addEventListener("click", setup);
+    flagToggleBtn.addEventListener("click", () => {
+      flagMode = !flagMode;
+      flagToggleBtn.textContent = `Flag Mode: ${flagMode ? "On" : "Off"}`;
+    });
     setup();

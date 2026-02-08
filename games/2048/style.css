@@ -59,8 +59,21 @@
       font-weight: 700;
       color: #1d2433;
     }
+
+    .touch-controls {
+      display: none;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .touch-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
     @media (max-width: 720px) {
       .game-area { grid-template-columns: 1fr; }
       .grid { grid-template-columns: repeat(4, 1fr); }
       .tile { width: 100%; height: 60px; }
+      .touch-controls { display: grid; }
     }

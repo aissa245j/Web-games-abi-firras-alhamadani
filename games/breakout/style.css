@@ -99,7 +99,13 @@
       line-height: 1.4;
     }
 
+    .touch-controls {
+      display: none;
+      gap: 6px;
+    }
+
     @media (max-width: 720px) {
       .game-area { grid-template-columns: 1fr; }
       canvas { width: 100%; height: auto; }
+      .touch-controls { display: grid; grid-template-columns: repeat(2, 1fr); }
     }
